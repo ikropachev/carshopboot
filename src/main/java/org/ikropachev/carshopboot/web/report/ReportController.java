@@ -24,19 +24,21 @@ import java.util.List;
 @Tag(name = "Report controller", description = "Operations for reports")
 public class ReportController {
     static final String REST_URL = "/api/reports";
-    protected static final String DATE_STR = "2021-10-02";
+    protected static final String DATE_BEGIN_STR = "2021-10-02";
     protected static final String DATE_END_STR = "2021-10-03";
 
     @Autowired
     private ReportRepository reportRepository;
 
+    //controller for visual test
     @GetMapping
     @Operation(summary = "View a list of all reports")
     public List<Report> getAll() {
         log.info("get all genres");
-        return reportRepository.findAll();
+        return reportRepository.getAll();
     }
 
+    /*
     @GetMapping(value = "/by-date")
     @Operation(summary = "View a list of all reports by date")
     public List<Report> getAllByDate(@Nullable @RequestParam(value = "date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
@@ -45,11 +47,12 @@ public class ReportController {
         log.info("get all reports by date {}", date);
         return reportRepository.getAllByDate(date);
     }
+     */
 
     @GetMapping(value = "/by-period/{beginDate}/{startDate}")
     @Operation(summary = "View a revenue by period")
     public Integer getRevenueByPeriod(@Nullable @RequestParam(value = "beginDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-                                      @Parameter(example = DATE_STR, required = false)
+                                      @Parameter(example = DATE_BEGIN_STR, required = false)
                                       LocalDate beginDate,
                                       @Nullable @RequestParam(value = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                                       @Parameter(example = DATE_END_STR, required = false)
