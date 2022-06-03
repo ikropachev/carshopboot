@@ -38,17 +38,6 @@ public class ReportController {
         return reportRepository.getAll();
     }
 
-    /*
-    @GetMapping(value = "/by-date")
-    @Operation(summary = "View a list of all reports by date")
-    public List<Report> getAllByDate(@Nullable @RequestParam(value = "date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-                                     @Parameter(example = DATE_STR, required = false)
-                                     LocalDate date) {
-        log.info("get all reports by date {}", date);
-        return reportRepository.getAllByDate(date);
-    }
-     */
-
     @GetMapping(value = "/by-period/{beginDate}/{startDate}")
     @Operation(summary = "View a revenue by period")
     public Integer getRevenueByPeriod(@Nullable @RequestParam(value = "beginDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
