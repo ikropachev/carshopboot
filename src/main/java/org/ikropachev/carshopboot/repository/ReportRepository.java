@@ -2,6 +2,7 @@ package org.ikropachev.carshopboot.repository;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.ikropachev.carshopboot.model.Report;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Transactional(readOnly = true)
 @Tag(name = "Report Controller")
-public interface ReportRepository extends BaseRepository<Report> {
+public interface ReportRepository extends JpaRepository<Report, Long> {
     @Query("SELECT r FROM Report r ORDER BY r.date, r.client.name, r.revenue")
     List<Report> getAll();
 
