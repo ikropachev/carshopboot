@@ -37,7 +37,7 @@ public class ReportController {
         return reportRepository.getAll();
     }
 
-    @GetMapping(value = "/revenue/by-period/{beginDate}/{endtDate}")
+    @GetMapping(value = "/revenue/by-period/{beginDate}/{endDate}")
     @Operation(summary = "View a revenue by period")
     public Integer getRevenueByPeriod(@Nullable @RequestParam(value = "beginDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                                       @Parameter(example = DATE_BEGIN_STR, required = false)
