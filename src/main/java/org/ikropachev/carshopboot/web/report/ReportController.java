@@ -30,7 +30,6 @@ public class ReportController {
     @Autowired
     private ReportRepository reportRepository;
 
-    //controller for visual test
     @GetMapping
     @Operation(summary = "View a list of all reports")
     public List<Report> getAll() {
@@ -38,7 +37,7 @@ public class ReportController {
         return reportRepository.getAll();
     }
 
-    @GetMapping(value = "/revenue/by-period/{beginDate}/{startDate}")
+    @GetMapping(value = "/revenue/by-period/{beginDate}/{endtDate}")
     @Operation(summary = "View a revenue by period")
     public Integer getRevenueByPeriod(@Nullable @RequestParam(value = "beginDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                                       @Parameter(example = DATE_BEGIN_STR, required = false)
