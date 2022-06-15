@@ -1,6 +1,8 @@
 package org.ikropachev.carshopboot.web.report;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.ikropachev.carshopboot.repository.ReportRepository;
+import org.ikropachev.carshopboot.util.JsonUtil;
 import org.ikropachev.carshopboot.web.AbstractControllerTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -20,6 +22,11 @@ public class ReportControllerTest extends AbstractControllerTest {
 
     @Autowired
     private ReportRepository reportRepository;
+
+    @Autowired
+    private void setMapper(ObjectMapper objectMapper) {
+        JsonUtil.setMapper(objectMapper);
+    }
 
     @Test
     void getAll() throws Exception {
