@@ -31,11 +31,11 @@ public class ReportControllerTest extends AbstractControllerTest {
 
     @Test
     void getRevenueByPeriod() throws Exception {
-        perform(MockMvcRequestBuilders.get(REST_URL + "/by-period/" + DATE_BEGIN_STR + "/" + DATE_END_STR))
+        perform(MockMvcRequestBuilders.get("/api/reports/revenue/by-period/2021-10-02/2021-10-03?beginDate=2021-10-02&endDate=2021-10-03"))
                 .andExpect(status().isOk())
                 .andDo(print())
                 // https://jira.spring.io/browse/SPR-14472
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(REVENUE_MATCHER.contentJson(revenueReport));
+                .andExpect(content().json("12500000"));
     }
 }
