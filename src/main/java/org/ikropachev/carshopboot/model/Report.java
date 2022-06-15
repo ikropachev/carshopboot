@@ -35,7 +35,7 @@ public class Report extends BaseEntity {
     @Schema(example = "1")
     private int numberOfSales;
 
-    //@NotNull
+    @NotNull
     @Column(name = "revenue")
     @Schema(example = "1000000")
     private int revenue;
