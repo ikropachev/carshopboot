@@ -1,18 +1,15 @@
 package org.ikropachev.carshopboot.web.report;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.ikropachev.carshopboot.repository.ReportRepository;
 import org.ikropachev.carshopboot.util.JsonUtil;
 import org.ikropachev.carshopboot.web.AbstractControllerTest;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.ikropachev.carshopboot.web.report.ReportController.DATE_BEGIN_STR;
-import static org.ikropachev.carshopboot.web.report.ReportController.DATE_END_STR;
-import static org.ikropachev.carshopboot.web.report.ReportTestData.*;
+import static org.ikropachev.carshopboot.web.report.ReportTestData.REPORT_MATCHER;
+import static org.ikropachev.carshopboot.web.report.ReportTestData.reportsSorted;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;

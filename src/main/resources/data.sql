@@ -1,12 +1,12 @@
 INSERT INTO car (name)
-VALUES  ('BMW X5'),
-        ('BMW X6'),
-        ('BMW X7');
+VALUES ('BMW X5'),
+       ('BMW X6'),
+       ('BMW X7');
 
 INSERT INTO client (name, phone)
-VALUES  ('Иванов Сергей', '+79107891122'),
-        ('Коробкин Олег', '+79107891155'),
-        ('Олейкин Роман', '+79107891166');
+VALUES ('Иванов Сергей', '+79107891122'),
+       ('Коробкин Олег', '+79107891155'),
+       ('Олейкин Роман', '+79107891166');
 
 INSERT INTO report (sale_on, car_id, number_of_sales, revenue, client_id)
 VALUES ('2021-10-01', 1, 1, 2000000, 1),
