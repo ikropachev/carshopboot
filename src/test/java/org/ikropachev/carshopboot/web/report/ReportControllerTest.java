@@ -21,9 +21,6 @@ public class ReportControllerTest extends AbstractControllerTest {
     private static final String REST_URL = ReportController.REST_URL;
 
     @Autowired
-    private ReportRepository reportRepository;
-
-    @Autowired
     private void setMapper(ObjectMapper objectMapper) {
         JsonUtil.setMapper(objectMapper);
     }
