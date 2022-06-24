@@ -9,5 +9,4 @@ class CarshopbootApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
