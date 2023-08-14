@@ -26,15 +26,16 @@
 
     $schema("DATABASE", "id_001") {
         $table("car", "id_001") {
-            $pk("id"): INTEGER NOT NULL
+            $pk("id"): INTEGER
             $column("name"): VARCHAR NOT NULL
         }
         $table("client", "id_002") {
-            $pk("id"): INTEGER NOT NULL
+            $pk("id"): INTEGER
             $column("name"): VARCHAR NOT NULL
             $column("phone"): VARCHAR NOT NULL
         }
         $table("report", "id_003") {
+            $pk("id"): INTEGER
             $column("sale_on"): DATE DEFAULT NOW
             $fk("car_id"): INTEGER NOT NULL
             $column("number_of_sales"): INTEGER
