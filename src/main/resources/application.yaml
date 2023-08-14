@@ -33,15 +33,14 @@ spring:
   jackson:
     visibility:
       field: any
-      getter: none
-      setter: none
-      is-getter: none
-
+      getter: any
+      setter: any
+      is-getter: any
 
 logging:
   level:
     root: WARN
-    org.ikropachev.gamenavigatorspringboot: DEBUG
+    org.ikropachev.carshopboot: DEBUG
     org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: DEBUG
 
 server.servlet:
