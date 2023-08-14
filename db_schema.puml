@@ -1,0 +1,48 @@
+@startuml
+    !theme plain
+    hide empty methods
+
+    !procedure $schema($name, $slug)
+        package "$name" as $slug <<Rectangle>>
+    !endprocedure
+
+    !procedure $table($name, $slug)
+        entity "<b>$name</b>" as $slug << (T, Aquamarine) table >>
+    !endprocedure
+
+    !procedure $pk($name)
+        <color:#GoldenRod><&key></color> <b>$name</b>
+    !endprocedure
+
+    !procedure $fk($name)
+        <color:#Silver><&key></color> $name
+    !endprocedure
+
+    !procedure $column($name)
+        {field} <color:#White><&media-record></color> $name
+    !endprocedure
+
+    title "CAR SHOP"
+
+    $schema("DATABASE", "id_001") {
+        $table("car", "id_001") {
+            $pk("id"): INTEGER NOT NULL
+            $column("name"): VARCHAR NOT NULL
+        }
+        $table("client", "id_002") {
+            $pk("id"): INTEGER NOT NULL
+            $column("name"): VARCHAR NOT NULL
+            $column("phone"): VARCHAR NOT NULL
+        }
+        $table("report", "id_003") {
+            $column("sale_on"): DATE DEFAULT NOW
+            $fk("car_id"): INTEGER NOT NULL
+            $column("number_of_sales"): INTEGER
+            $column("revenue"): INTEGER
+            $fk("client_id"): INTEGER NOT NULL
+        }
+    }
+
+    id_001.id_001::id --> id_001.id_003::car_id
+    id_001.id_002::id --> id_001.id_003::client_id
+@enduml

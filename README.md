@@ -12,3 +12,7 @@ amount (input data: none; output data: the customer's last name and first name, 
 order date, car model, number of cars in the order).
 
 [Swagger REST API](http://localhost:8080/swagger-ui.html)
+
+Database schema:
+
+![Screenshot](db_schema.svg)
